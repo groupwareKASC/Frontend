@@ -1,15 +1,6 @@
 ---
 name: bug
-about: Describe this issue template's purpose here.
-title: ''
-labels: ''
-assignees: ''
-
----
-
----
-name: Bug
-about: "\U0001F41B 버그 발생/해결 템플릿"
+about: Bug error resolve
 title: "[BUG] 작업 제목 (예: [BUG] 로그인 시 잘못된 비밀번호 처리 오류)"
 labels: ''
 assignees: ''
