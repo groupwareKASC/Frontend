@@ -1,7 +1,7 @@
 ---
-name: Bug
-about: "\U0001F41B 버그 발생/해결 템플릿"
-title: "[BUG] 작업 제목 (예: [BUG] 로그인 시 잘못된 비밀번호 처리 오류)"
+name: Test
+about: "✅ 테스트 케이스 작성 템플릿"
+title: "[TEST] 작업 제목 (예: [TEST] 로그인 기능 시나리오 테스트)"
 labels: ''
 assignees: ''
 
