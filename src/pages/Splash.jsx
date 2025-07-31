@@ -9,7 +9,7 @@ const Splash = () => {
     useEffect(() => {
         const timer = setTimeout(() => {
             navigate('/Attendence');
-        }, 2300)
+        }, 2800)
 
         return () => clearTimeout(timer);
     }, [navigate])
@@ -21,7 +21,7 @@ const Splash = () => {
             transition={{
                 duration: 1.5,
                 delay: 0.5,
-                ease: [0, 0.71, 0.2, 1.01],
+                ease: [0.3, 0.1, 0.25, 1],
             }}
         >
             <img src={big_icon} alt="big_icon" />

@@ -3,8 +3,10 @@ import { AnimatePresence } from "framer-motion";
 import React, { Suspense } from "react";
 
 const Splash = React.lazy(() => import('./pages/Splash'));
-const Attendence = React.lazy(() => import('./pages/Attendence'));
 const Render = React.lazy(() => import('./pages/Render'));
+const Attendence = React.lazy(() => import('./pages/Attendence'));
+const VariableCost = React.lazy(() => import('./pages/VariableCost'));
+const SubstituteCost = React.lazy(() => import('./pages/SubstituteCost'));
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Splash />} />
             <Route path="/Attendence" element={<Attendence />} />
+            <Route path="/VariableCost" element={<VariableCost />} />
+            <Route path="/SubstituteCost" element={<SubstituteCost />} />
           </Routes>
         </Suspense>
       </AnimatePresence>
