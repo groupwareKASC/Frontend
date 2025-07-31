@@ -2,7 +2,6 @@ import React from 'react';
 import styled from "styled-components";
 import { Button } from "../Button/Button";
 import type { ButtonProps } from '../Button/Button.types';
-import small_icon from "../../../public/images/small_logo.svg"
 
 type SideProps = {
     buttons: ButtonProps[];
@@ -12,7 +11,7 @@ export const Side = ({ buttons }: SideProps) => {
 
     return(
         <SideBar>
-            <Logo><img src={small_icon} alt="small_icon" /></Logo>
+            <Logo><img src='/images/small_logo.svg' alt="small_icon" /></Logo>
             <aside>
                 {buttons.map((btn, index) => (
                     <Button key={index} label={btn.label} path={btn.path}/>
