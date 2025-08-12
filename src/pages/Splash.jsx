@@ -16,6 +16,13 @@ const Splash = () => {
 
     return (
         <motion.div
+            style={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                height: '100vh',
+                width: '100vw',
+            }}
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{
@@ -24,7 +31,7 @@ const Splash = () => {
                 ease: [0.3, 0.1, 0.25, 1],
             }}
         >
-            <img src={big_icon} alt="big_icon" />
+            <img src={big_icon} alt="big_icon" style={{ width: '25%', height: '25%'}}/>
         </motion.div>
     )
 }

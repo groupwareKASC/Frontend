@@ -14,12 +14,12 @@ export const Button = ({ label, path }: ButtonProps) => {
 };
 
 const Btn = styled.div`
-    width: 15.75rem;
-    height: 6.125rem;
+    width: 13.125vw;
+    height: 9.074vh;
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.30), 0 1px 3px 1px rgba(0, 0, 0, 0.15);
     color: var(--Black-1, #000);
     font-family: Inter;
-    font-size: 1.5rem;
+    font-size: 1.4vw;
     font-style: normal;
     font-weight: 400;
     line-height: normal;

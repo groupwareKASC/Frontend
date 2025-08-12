@@ -11,7 +11,7 @@ export const Side = ({ buttons }: SideProps) => {
 
     return(
         <SideBar>
-            <Logo><img src='/images/small_logo.svg' alt="small_icon" /></Logo>
+            <Logo><img src='/images/small_logo.svg' alt="small_icon"/></Logo>
             <aside>
                 {buttons.map((btn, index) => (
                     <Button key={index} label={btn.label} path={btn.path}/>
@@ -22,7 +22,7 @@ export const Side = ({ buttons }: SideProps) => {
 };
 
 const SideBar = styled.aside`
-  width: 15.75rem;
+  width: 13.125vw;
   height: 100vh;
   display: flex;
   flex-direction: column; 
@@ -34,5 +34,8 @@ const SideBar = styled.aside`
 
 const Logo = styled.div`
     margin: 2.56rem 0;
+    img {
+        width: 12vw;
+    }
 `;
 
