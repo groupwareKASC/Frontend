@@ -5,6 +5,8 @@ body {
   place-items: center;
   margin : 0 auto;
   min-width: 320px;
-  min-height: 100vh;
+  height: 100%;
+  background-color: #F6F7F9;
+  overflow: hidden;
 }
 
