@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, type ReactElement } from 'react'
 import {useNavigate} from "react-router-dom";
 import big_icon from "../../public/images/big_logo.svg"
 import * as motion from "motion/react-client"
 
-const Splash = () => {
+const Splash = () : ReactElement => {
     const navigate = useNavigate();
 
     useEffect(() => {

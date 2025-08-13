@@ -1,8 +1,15 @@
-import React, { useState } from 'react'
+import { useState, type ChangeEvent, type ReactElement } from 'react'
 import styled from 'styled-components'
 import { Side } from '../components/SideBar/Side'
-import { useForm } from "react-hook-form";
+import { useForm, type SubmitHandler } from "react-hook-form";
 import { CheckGroup } from '../components/CheckField/CheckGroup';
+import { ExcelFile } from '../components/ExcelFile/ExcelFile';
+
+type FormValue = {
+  department: string;
+  excelFile: FileList;
+  erpFile: FileList;
+};
 
 // 지사 데이터
 const  DPT_LIST = [
@@ -27,32 +34,37 @@ const  DPT_LIST = [
 
 const SIDEBAR_WIDTH = '13.125vw';
 
-const Attendence = () => {
-  const { register, handleSubmit, formState: { errors }} = useForm({
-    defaultValues: { department: '' }, 
+const Attendence = (): ReactElement => {
+  const {
+    register,
+    handleSubmit,
+    formState: {errors},
+  } = useForm<FormValue>({
+    defaultValues: {department: ''}
   });
 
   const [excelName, setExcelName] = useState("");
   const [erpName, setErpName] = useState("");
 
-  const [excelFile, setExcelFile] = useState<File|null>(null);
-  const [erpFile, setErpFile] = useState<File|null>(null);
+  const [excelFile, setExcelFile] = useState<File | null>(null);
+  const [erpFile, setErpFile] = useState<File | null>(null);
 
-  const onSubmit = (data) => {
+  const onSubmit: SubmitHandler<FormValue> = (data) => {
     alert(data.department);
   };
 
   // 파일 업로드 이벤트 발생 시 파일명 저장
-  const handleExcelChange = (e) => {
-    const file = e.target.files?.[0] || null;
+  const handleExcelChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0] ?? null;
     setExcelName(file ? file.name : "");
-    setExcelFile(file); 
+    setExcelFile(file);
   };
   
-  const handleErpChange = (e) => {
-    const file = e.target.files?.[0];
-    setErpName(file ? file.name: "");
-  }
+  const handleErpChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0] ?? null;
+    setErpName(file ? file.name : "");
+    setErpFile(file);                
+  };
 
 
   return (
@@ -138,10 +150,8 @@ const Attendence = () => {
         </BtnWrapper>
       </FormRow>
 
+      <ExcelFile file={excelFile} />
 
-      <ExcelPrint>
-
-      </ExcelPrint>
     </ExcelContentWrapper>
     </>
   )

@@ -1,7 +1,7 @@
-import React from 'react'
+import { FC } from "react";
 import {MoonLoader} from "react-spinners";
 
-const Render = () => {
+const Render: FC = () => {
   return (
     <div><MoonLoader color='#142F64'/></div>
   )
