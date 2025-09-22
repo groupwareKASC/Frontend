@@ -80,7 +80,6 @@ const Title = styled.div`
   left: 1.56rem;
 `;
 
-
 const Content = styled.div`
   position: absolute;
   color: #000;
@@ -89,6 +88,10 @@ const Content = styled.div`
   font-style: normal;
   font-weight: 300;
   line-height: normal;
+  whiteSpace:"normal";      
+  overflow:"visible";
+  textOverflow:"clip";
+  wordBreak:"keep-all";
   top: 5.25rem;
   left: 1.56rem;
 `;
