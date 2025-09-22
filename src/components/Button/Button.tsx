@@ -97,10 +97,10 @@ const Btn = styled.button<{ $active?: boolean }>`
     ${({ $active }) =>
       $active
         ? css`
-            background: var(--Blue-3, #182E64); /* 업로드 후 hover */
+            background: var(--Blue-3, #182E64); 
           `
         : css`
-            background: var(--Blue-1, #9DBEE1); /* 업로드 전 hover */
+            background: var(--Blue-1, #9DBEE1); 
           `}
     color: #F8F8F8;
   }

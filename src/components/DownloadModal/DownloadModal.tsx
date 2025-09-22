@@ -88,10 +88,10 @@ const Content = styled.div`
   font-style: normal;
   font-weight: 300;
   line-height: normal;
-  whiteSpace:"normal";      
-  overflow:"visible";
-  textOverflow:"clip";
-  wordBreak:"keep-all";
+  white-space: normal;      
+  overflow: visible;
+  text-overflow: clip;
+  word-break:"keep-all";
   top: 5.25rem;
   left: 1.56rem;
 `;
