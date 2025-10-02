@@ -41,17 +41,6 @@ export const Attendence = () : ReactElement => {
     {label: '불일치', value: 'mismatch'},
   ];
 
-  // loadingModal을 열고난 후 5초 뒤 다운로드 모달로 전환 (이후에 수정필요)
-  useEffect(() => {
-    if(loadingModal) {
-      const timer = setTimeout(() => {
-        setLoadingModal(false);
-        setDownloadModal(true);
-      }, 3000);
-      return() => clearTimeout(timer);
-    }
-  }, [loadingModal]);
-
   // 비밀번호 저장 처리
   const handleSavePassword = (password: string) => {
     if(passwordModal === "manual") {
@@ -118,16 +107,18 @@ export const Attendence = () : ReactElement => {
       // 백엔드에서 보내준 파일명 추출
       const fileNameResponse = await fetch("http://localhost:18080/api/data/filename");
       if(!fileNameResponse.ok) throw new Error("파일명 api 불러오기 실패");
-
       const fileName = await fileNameResponse.text();
 
       // 파일 다운로드 처리하기
       await handleDownload(blob, fileName);
 
-      setLoadingModal(false);
+      // 다운로드 모달 세팅
       setDownloadTitle("다운로드 완료");
       setDownloadMessage("save폴더에 저장되었습니다.");
       setDownloadModal(true);
+
+      // 마지막에 로딩 모달 닫기
+      setLoadingModal(false);
     } catch(error) {
       console.log("호출 오류: ", error);
       setLoadingModal(false);

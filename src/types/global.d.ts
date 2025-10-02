@@ -7,5 +7,9 @@ declare global {
       onSaveFileSuccess: (callback: (saveDir: string) => void) => void;
       openFolder: (path: string) => void;
     };
+    TypeHangul?: {
+      type: (selectorOrEl: string | Element, opts?: any) => void;
+      remove?: (selectorOrEl: string | Element) => void;
+    };
   }
 }

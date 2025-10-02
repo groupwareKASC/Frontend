@@ -9,7 +9,7 @@ export const Splash = (): ReactElement => {
   useEffect(() => {
     const timer = setTimeout(() => {
       navigate("/Attendence");
-    }, 2800);
+    }, 7000);
 
     return () => clearTimeout(timer);
   }, [navigate]);
@@ -24,7 +24,7 @@ export const Splash = (): ReactElement => {
 const fadeInScale = keyframes`
   0% {
     opacity: 0;
-    transform: scale(0.5);
+    transform: scale(0.6);
   }
   100% {
     opacity: 1;
@@ -43,12 +43,12 @@ const SplashWrapper = styled.div`
   align-items: center;
   height: 100vh;
   width: 100vw;
-  animation: ${fadeOut} 0.5s ease-in 2.2s forwards;
+  animation: ${fadeOut} 0.5s ease-in 6.2s forwards;
 `;
 
 const Logo = styled.img`
   width: 55vw;
   max-width: 690px;
   min-width: 400px;
-  animation: ${fadeInScale} 1.5s ease-out 0.5s both;
+  animation: ${fadeInScale} 1s ease-out 2.5s both;
 `;
